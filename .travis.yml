@@ -23,7 +23,6 @@ before_install:
   - source $HOME/.pythonz/etc/bashrc
 
 install:
-  - sudo apt-get install libffi-dev
   - pythonz install 2.6.9
   - pythonz install 2.7.13
   - pythonz install 3.2.5
