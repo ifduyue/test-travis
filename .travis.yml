@@ -13,6 +13,11 @@ cache:
   directories:
     - "$HOME/.pythonz"
 
+matrix:
+  include:
+    os: osx
+    language: objective-c
+
 before_install:
   - if [[ ! -s $HOME/.pythonz/etc/bashrc ]]; then  curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash; fi
   - source $HOME/.pythonz/etc/bashrc
