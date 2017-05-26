@@ -16,6 +16,7 @@ before_install:
 
 install:
   - pythonz install 2.6.9
+  - pythonz install 2.7.12
   - pythonz install 2.7.13
   - pythonz install 3.2.5
   - pythonz install 3.3.6
