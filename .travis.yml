@@ -5,6 +5,10 @@ env:
   global:
       - MAKEFLAGS="-j 2"
 
+cache:
+  directories:
+    - "$HOME/.pythonz"
+
 before_install:
   - sudo apt-get install libffi-dev
   - curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
