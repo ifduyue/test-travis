@@ -5,12 +5,16 @@ before_install:
   - sudo apt-get install libffi-dev
   - curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
   - source $HOME/.pythonz/etc/bashrc
-  - pythonz install 2.7.13
-  - pythonz install 2.7
 
 install:
-  - $(pythonz locate 2.7.13) --version
-  - $(pythonz locate 2.7) --version
+  - pythonz install 2.6.9
+  - pythonz install 2.7.13
+  - pythonz install 3.2.5
+  - pythonz install 3.3.6
+  - pythonz install 3.4.6
+  - pythonz install 3.5.3
+  - pythonz install 3.6.1
 
 script:
   - env
+  - pythonz list
