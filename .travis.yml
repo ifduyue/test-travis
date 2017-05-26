@@ -13,7 +13,7 @@ cache:
     - "$HOME/.pythonz"
 
 before_install:
-  - [[ -s $HOME/.pythonz/etc/bashrc ]] || curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
+  - if [[ -s $HOME/.pythonz/etc/bashrc ]]; then  curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash; fi
   - source $HOME/.pythonz/etc/bashrc
 
 install:
