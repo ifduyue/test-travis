@@ -8,4 +8,4 @@ before_install:
   - pythonz install 2.7.13
 
 install:
-  - `pythonz locate 2.7.12` --version
+  - $(pythonz locate 2.7.13) --version
