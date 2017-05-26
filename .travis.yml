@@ -6,3 +6,6 @@ before_install:
   - curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
   - source $HOME/.pythonz/etc/bashrc
   - pythonz install 2.7.13
+
+install:
+  - `pythonz locate 2.7.12` --version
