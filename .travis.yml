@@ -9,6 +9,7 @@ env:
 before_cache:
   - rm -rf $HOME/.pythonz/build/*
   - rm -rf $HOME/.pythonz/log/*
+  - rm -rf $HOME/.pythonz/pythons/CPython-3.2.*
   - du -sh $HOME/.pythonz
 cache:
   directories:
