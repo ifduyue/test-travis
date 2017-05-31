@@ -40,3 +40,4 @@ install:
 script:
   - env
   - pythonz list
+  - .travis/run.sh
