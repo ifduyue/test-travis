@@ -18,9 +18,7 @@ cache:
 matrix:
   include:
     - os: osx
-      language: objective-c
     - os: linux
-      dist: trusty
 
 before_install:
   - if [[ ! -s $HOME/.pythonz/etc/bashrc ]]; then  curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash; fi
