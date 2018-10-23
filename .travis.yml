@@ -1,44 +1,13 @@
-language: python
-dist: trusty
-sudo: required
-
-env:
-  global:
-      - MAKEFLAGS="-j 2"
-
-before_cache:
-  - rm -rf $HOME/.pythonz/build/*
-  - rm -rf $HOME/.pythonz/log/*
-  - rm -rf $HOME/.pythonz/pythons/CPython-3.2.*
-  - du -sh $HOME/.pythonz
-cache:
-  directories:
-    - "$HOME/.pythonz"
+language: bash
 
 matrix:
   include:
-    - os: osx
-    - os: linux
-
-before_install:
-  - if [[ ! -s $HOME/.pythonz/etc/bashrc ]]; then  curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash; fi
-  - source $HOME/.pythonz/etc/bashrc
+    - os: windows
 
 install:
-  - pip install virtualenv
-  - pythonz install 2.6.9
-  - pythonz install 2.7.15
-  - pythonz install 3.2.5
-  - pythonz install 3.3.6
-  - pythonz install 3.4.6
-  - pythonz install 3.5.3
-  - pythonz install 3.6.6
-  - pythonz install 3.7.0
-  - pythonz install -t pypy 5.3.1
-  - pythonz install -t pypy3 2.3.1
-  - pythonz install -t pypy3 2.4.0
+  - git clone --recursive https://github.com/ifduyue/python-xxhash.git
+  - pushd python-xxhash
+  - python setup.py build_ext
 
 script:
-  - env
-  - pythonz list
-  - .travis/run.sh
+  - python setup.py test
