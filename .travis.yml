@@ -7,8 +7,11 @@ before_install:
   - export OLDPATH=$PATH
   - mkdir -p /c/pythons
   - choco install -y vcpython2
+  - choco install -y visualstudio2017buildtools
   - choco install python2 --version 2.7.15 -my --params "/InstallDir:C:\\pythons\\Python27-x64"
   - choco install python2 --version 2.7.15 -my --x86 --params "/InstallDir:C:\\pythons\\Python27"
+  - choco install python3 --version 3.7.1 -my --params "/InstallDir:C:\\pythons\\Python37-x64"
+  - choco install python3 --version 3.7.1 -my --x86 --params "/InstallDir:C:\\pythons\\Python37"
 
 install:
   - git clone --recursive https://github.com/ifduyue/python-xxhash.git
