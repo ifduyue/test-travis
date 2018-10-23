@@ -2,4 +2,5 @@ os: windows
 language: sh
 
 install:
-  - choco install -y dotnet3.5
+  - choco install -y dotnet3.5 || true
+  - cat /c/ProgramData/chocolatey/logs/chocolatey.log
