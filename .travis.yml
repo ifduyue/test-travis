@@ -5,6 +5,8 @@ matrix:
     - os: windows
 
 install:
+  - wget https://www.python.org/ftp/python/3.7.1/python-3.7.1-embed-win32.zip
+  - 7z e python-3.7.1-embed-win32.zip -oC:\python37 -r -y
   - git clone --recursive https://github.com/ifduyue/python-xxhash.git
   - pushd python-xxhash
   - python setup.py build_ext
