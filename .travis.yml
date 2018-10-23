@@ -2,5 +2,8 @@ os: windows
 language: sh
 
 install:
-  - choco install -y dotnet3.5 || true
-  - cat /c/ProgramData/chocolatey/logs/chocolatey.log
+  -  wget https://www.python.org/ftp/python/3.6.7/python-3.6.7-amd64.exe
+  # default targetDir
+  - ./python-3.6.7-amd64.exe /quiet Include_test=0 AssociateFiles=0 Shortcuts=0 Include_doc=0 Include_launcher=0 InstallLauncherAllUsers=0 Include_tcltk=0
+  # custom targetDir
+  - ./python-3.6.7-amd64.exe /quiet TargetDir=C:\\pythons\\Python36-x64 Include_test=0 AssociateFiles=0 Shortcuts=0 Include_doc=0 Include_launcher=0 InstallLauncherAllUsers=0 Include_tcltk=0
