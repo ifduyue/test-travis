@@ -7,9 +7,9 @@ before_install:
   - export OLDPATH=$PATH
   - mkdir -p /c/pythons
   - ls /c/
+  - choco install -y visualstudio2017buildtools
+  - choco install -y vcpython27
   - choco upgrade -y python2
-  #- choco install -y vcpython27
-  #- choco install -y visualstudio2017buildtools
   #- choco install python2 --version 2.7.15 -my --params "/InstallDir:C:\\pythons\\Python27-x64"
   #- choco install python2 --version 2.7.15 -my --x86 --params "/InstallDir:C:\\pythons\\Python27"
   #- choco install python2 --version 2.6.6 -my --params "/InstallDir:C:\\pythons\\Python26-x64"
