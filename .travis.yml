@@ -2,5 +2,4 @@ os: windows
 language: sh
 
 install:
-  - choco install -y vcpython27
-  - choco upgrade -y python2
+  - choco install -y dotnet3.5
