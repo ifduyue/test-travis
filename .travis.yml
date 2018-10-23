@@ -6,6 +6,7 @@ matrix:
 before_install:
   - export OLDPATH=$PATH
   - mkdir -p /c/pythons
+  - ls /c/
   #- choco install -y vcpython27
   #- choco install -y visualstudio2017buildtools
   #- choco install python2 --version 2.7.15 -my --params "/InstallDir:C:\\pythons\\Python27-x64"
