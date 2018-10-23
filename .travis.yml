@@ -1,15 +1,25 @@
-language: bash
-
 matrix:
   include:
     - os: windows
+      language: bash
+
+before_install:
+  - export OLDPATH=$PATH
+  - mkdir -p /c/pythons
+  
+  - wget https://www.python.org/ftp/python/3.6.7/python-3.6.7-embed-amd64.zip
+  - unzip python-3.6.7-embed-amd64 -d /c/pythons/Python36-x64
+  - /c/pythons/Python36-x64/python -m pip install --upgrade pip setuptools
+
+  - wget https://www.python.org/ftp/python/3.6.7/python-3.6.7-embed-win32.zip
+  - unzip python-3.6.7-embed-win32 -d /c/pythons/Python36
+  - /c/pythons/Python36/python -m pip install --upgrade pip setuptools
 
 install:
-  - wget https://www.python.org/ftp/python/3.7.1/python-3.7.1-embed-win32.zip
-  - 7z e python-3.7.1-embed-win32.zip -oC:\python37 -r -y
   - git clone --recursive https://github.com/ifduyue/python-xxhash.git
   - pushd python-xxhash
-  - C:\python37\python setup.py build_ext
+  - export PATH="/c/pythons/Python36-x64:/c/pythons/Python36-x64/Scripts:$OLDPATH"
+  - python setup.py build_ext
 
 script:
-    - C:\python37\python setup.py test
+    - python setup.py test
