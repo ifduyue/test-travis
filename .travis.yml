@@ -1,7 +1,7 @@
 matrix:
   include:
     - os: windows
-      language: bash
+      language: cpp
 
 before_install:
   - export OLDPATH=$PATH
