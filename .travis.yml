@@ -6,13 +6,13 @@ matrix:
 before_install:
   - export OLDPATH=$PATH
   - mkdir -p /c/pythons
-  - choco install python2 --version 2.7.15 -my --params "/InstallDir:C:\\Python27-x64"
-  - choco install python2 --version 2.7.15 -my --x86 --params "/InstallDir:C:\\Python27"
+  - choco install python2 --version 2.7.15 -my --params "/InstallDir:C:\\pythons\\Python27-x64"
+  - choco install python2 --version 2.7.15 -my --x86 --params "/InstallDir:C:\\pythons\\Python27"
 
 install:
   - git clone --recursive https://github.com/ifduyue/python-xxhash.git
   - pushd python-xxhash
-  - export PATH="/c/pythons/Python27-x64:/c/pythons/Python36-x64/Scripts:$OLDPATH"
+  - export PATH="/c/pythons/Python27-x64:/c/pythons/Python27-x64/Scripts:$OLDPATH"
   - python setup.py build_ext
 
 script:
