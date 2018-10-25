@@ -1,9 +1,10 @@
 os: windows
-language: sh
+language: c
 
 install:
-  -  wget https://www.python.org/ftp/python/3.6.7/python-3.6.7.exe
-  # default TargetDir
-  - ./python-3.6.7.exe /quiet Include_test=0 AssociateFiles=0 Shortcuts=0 Include_doc=0 Include_launcher=0 InstallLauncherAllUsers=0 Include_tcltk=0
-  # custom TargetDir
-  - ./python-3.6.7.exe /quiet TargetDir=C:\\pythons\\Python36 Include_test=0 AssociateFiles=0 Shortcuts=0 Include_doc=0 Include_launcher=0 InstallLauncherAllUsers=0 Include_tcltk=0
+  - choco install python3
+  - python3 -m pip install --upgrade pip setuptools cibuildwheel
+  - git clone https://github.com/redis/hiredis-py.git
+  - pushd hiredis-py
+  - cibuildwheel --output-dir wheels
+  - ls wheels
